@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>跑出你的 MBTI 人格！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <section id="quiz-container" v-if="currentQuestion < questions.length">
+            <div v-if="currentQuestion === 0">
+                <h1>跑出你的 MBTI 人格！</h1>
+                <p>探索你的跑步風格與 MBTI 人格的關聯。<br>
+                選擇你的偏好程度</p>
+            </div>
+            <div id="question-container">
+                <h2>{{ questions[currentQuestion].question }}</h2>
+                <div class="scale-labels">
+                    <span>{{ questions[currentQuestion].text[0] }}</span>
+                    <span>{{ questions[currentQuestion].text[1] }}</span>
+                </div>
+                <div class="scale-container">
+                    <label v-for="option in options" :key="option.value" :class="{ selected: selectedAnswer === option.value }">
+                        <input type="radio" name="answer" :value="option.value" v-model="selectedAnswer">
+                        <span class="emoji-option">{{ option.text }}</span>
+                    </label>
+                </div>
+                <div v-if="currentQuestion === 0">                    
+                    <p>此問答/描述/圖片都是透過 AI 協助<br>
+                    純屬趣味，請勿過度當真<br>
+                    重點還是要保持心情愉快，保持身體健康!!!</p>
+                </div>                
+                <div class="progress-bar">
+                    <div class="progress" :style="{ width: progressPercentage + '%' }"></div>
+                </div>
+            </div>
+            <button id="next-btn" @click="nextQuestion" :disabled="!selectedAnswer">下一題</button>
+        </section>
+
+        <section id="results-container" v-else>
+            <div class="result-card">
+                <img :src="`images/${mbtiType}_${randomImageNum}.jpg`" :alt="`${mbtiType} personality image`">
+                <h3>{{ mbtiType }} - {{ mbtiDescription.description }}</h3>
+                <p>{{ mbtiDescription.runningStyle }}</p>
+                <canvas id="radar-chart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <div class="bottomBar">
+        <a id="ref" href="https://portaly.cc/luoboso" target="_blank">蘿泥蔔說</a>&nbsp&nbsp|&nbsp&nbsp
+        <a id="ref" href="https://www.facebook.com/jybsbj4/" target="_blank">交友不慎</a>&nbsp&nbsp|&nbsp&nbsp
+        <a id="ref" href="https://luoboso.github.io/taiwan-running-scouter/" target="_blank">跑步溫度計</a>&nbsp&nbsp|&nbsp&nbsp
+        <a id="ref" href="https://luoboso.github.io/taiwan-running-level/" target="_blank">跑步戰鬥力</a>
+      </div>
+</body>
+</html>
