@@ -78,7 +78,6 @@ const app = new Vue({
                 text: ["專注於當下配速", "欣賞沿途風景"],
                 scale: ["S", "N"],
             },
-
             {
                 question: "🍌比賽補給策略，你會...",
                 text: ["預先安排", "餓了就吃"],
@@ -227,9 +226,11 @@ const app = new Vue({
                 }
             });
         },
-        shareResult(platform) {
+        shareResult() {
+            const resultContainer = document.getElementById('share-result');
+            html2canvas(resultContainer, { useCORS: true }).then(canvas => { 
             const mbtiType = this.mbtiType;
-            const imageUrl = `images/${mbtiType}_${this.randomImageNum}.jpg`;
+            const imageUrl = canvas.toDataURL('image/jpeg', 0.8);
             const shareData = {
                 title: '跑出你的 MBTI 人格！',
                 text: `我的 MBTI 人格是 ${mbtiType}！`,
@@ -242,11 +243,13 @@ const app = new Vue({
                     .then(() => console.log('Successful share'))
                     .catch(error => console.log('Error sharing:', error));
             } else {
-                // 如果不支援 Web Share API，使用原先的分享邏輯 (Twitter, Instagram, Facebook)
-                let shareUrl;
-                // ... (原先的分享邏輯)
-                window.open(shareUrl, "_blank");
+                const downloadLink = document.createElement('a');
+                downloadLink.href = imageUrl;
+                downloadLink.download = 'mbti_result.jpg';
+                downloadLink.click();
             }
+            });
         }
+
     }
 });
