@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: https://raw.githubusercontent.com;">
     <meta charset="UTF-8">
     <title>跑出你的 MBTI 人格！</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,14 +58,14 @@
         </section>
 
         <section id="results-container" v-if="currentQuestion >= questions.length">
-            <div class="result-card">
-                <img :src="`images/${mbtiType}_${randomImageNum}.jpg`" :alt="`${mbtiType} personality image`">
-                <h3>{{ mbtiType }} - {{ mbtiDescription.description }}</h3>
-                <p>{{ mbtiDescription.runningStyle }}</p>
-                <canvas id="radar-chart"></canvas>
-                <button @click="shareResult">分享結果</button> 
+          <div id="share-result" class="result-card"> <div class="share-result">
+              <img id="result" :src="`https://raw.githubusercontent.com/luoboso/running-mbti/main/images/${mbtiType}_${randomImageNum}.jpg`" :alt="`${mbtiType} personality image`">
+              <h3>{{ mbtiType }} - {{ mbtiDescription.description }}</h3>
+              <p>{{ mbtiDescription.runningStyle }}</p>
+              <canvas id="radar-chart"></canvas>
             </div>
-
+            <button @click="shareResult">分享我的結果</button> 
+          </div>
         </section>
     </div>
 
