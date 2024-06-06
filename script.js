@@ -240,11 +240,6 @@ const app = new Vue({
             downloadLink.href = imageUrl;
             downloadLink.download = 'mbti_result.jpg';
             downloadLink.click();
-            if (navigator.share) { // 檢查瀏覽器是否支援 Web Share API
-                navigator.share(shareData)
-                    .then(() => console.log('Successful share'))
-                    .catch(error => console.log('Error sharing:', error));
-            } 
             });
         }
 
