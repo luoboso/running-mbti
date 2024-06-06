@@ -234,8 +234,7 @@ const app = new Vue({
             const shareData = {
                 title: '跑出你的 MBTI 人格！',
                 text: `我的 MBTI 人格是 ${mbtiType}！`,
-                url: window.location.href,
-                files: [new File([imageUrl], 'mbti_result.jpg', { type: 'image/jpeg' })] 
+                url: window.location.href
             };
             const downloadLink = document.createElement('a');
             downloadLink.href = imageUrl;
