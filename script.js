@@ -1,6 +1,10 @@
 const app = new Vue({
     el: '#app',
     data: {
+        imageUrl: null,
+        name: '',
+        showDisclaimer: true,
+        selectedAnswers: [],
         options: [
             { text: "👈👈", value: 1 },
             { text: "👈", value: 2 },
@@ -10,93 +14,93 @@ const app = new Vue({
         ],
         questions: [
             {
-                question: "哪一個目標對你比較容易...",
+                question: "🤔哪一個目標對你比較容易...",
                 text: ["炸200", "跑200"],
                 scale: ["X", "Y"],
             },
             {
-                question: "跑步計劃，你更像是...",
+                question: "📅跑步計劃，你更像是...",
                 text: ["隨性自由派，佛系隨緣", "時間管理大師，嚴格執行"],
                 scale: ["P", "J"],
             },
             {
-                question: "跑步路線，你更喜歡..",
+                question: "🏞️跑步路線，你更喜歡..",
                 text: ["最佳路線，效率至上", "隨心所欲，探索未知"],
                 scale: ["T", "F"],
             },
             {
-                question: "跑步時遇到其他跑者，你會...",
+                question: "😳跑步時遇到其他跑者，你會...",
                 text: ["聊上幾句", "戴上耳機"],
                 scale: ["E", "I"],
             },            
             {
-                question: "為比賽做準備時，你更傾向...",
-                text: ["制定詳細訓練計劃", "隨心所欲隨時調整"],
-                scale: ["J", "P"],
-            },
-            {
-                question: "跑步裝備，你更在意...",
+                question: "👟跑步裝備，你更在意...",
                 text: ["黑科技加持，數據說話", "顏值即正義，外觀至上"],
                 scale: ["T", "F"],
             },
             {
-                question: "在課表練習中，你更傾向於...",
+                question: "⏱️在課表練習中，你更傾向於...",
                 text: ["與跑友一起訓練", "獨自埋頭苦練"],
                 scale: ["E", "I"],
             },
             {
-                question: "跑步時遇到困難，你會...",
+                question: "😢跑步時遇到困難，你會...",
                 text: ["分析找出具體解決方案", "憑直覺和經驗調整"],
                 scale: ["S", "N"],
             },
             {
-                question: "設定跑步目標時，你傾向...",
+                question: "🎯設定跑步目標時，你傾向...",
                 text: ["追隨內心的渴望","客觀合理的目標"],
                 scale: ["F", "T"],
             },
             {
-                question: "跑步後的拉伸，你更像是...",
+                question: "🧘‍跑步後的拉筋，你更像是...",
                 text: ["Freestyle 舞者，隨心所欲", "瑜伽大師，精準到位"],
                 scale: ["N", "S"],
             },
             {
-                question: "比賽前一晚，你通常...",
+                question: "🛠️為比賽做準備時，你更傾向...",
+                text: ["制定詳細訓練計劃", "隨心所欲隨時調整"],
+                scale: ["J", "P"],
+            },            
+            {
+                question: "⏳比賽前一晚，你通常...",
                 text: ["獨自一人放鬆", "和朋友或家人聚會"],
                 scale: ["I", "E"],
             },
             {
-                question: "比賽前，你更關注...",
+                question: "🚶‍比賽前，你更關注...",
                 text: ["檢查裝備補給等細節", "想像比賽的場景氛圍"],
                 scale: ["S", "N"],
             },
             {
-                question: "比賽中，你更傾向...",
+                question: "🏃比賽中，你更傾向...",
                 text: ["專注於當下配速", "欣賞沿途風景"],
                 scale: ["S", "N"],
             },
 
             {
-                question: "比賽補給策略，你會...",
+                question: "🍌比賽補給策略，你會...",
                 text: ["預先安排", "餓了就吃"],
                 scale: ["J", "P"],
             },
             {
-                question: "賽後，你更傾向...",
+                question: "👣賽後，你更傾向...",
                 text: ["享受完賽喜悅", "分析比賽數據"],
                 scale: ["P", "J"],                
             },
             {
-                question: "跑步遇到撞牆期時，你會...",
+                question: "🧱跑步遇到撞牆期時，你會...",
                 text: ["找朋友或教練聊聊", "自己找方法突破"],
                 scale: ["E", "I"],
             },
             {
-                question: "評估跑步表現時，你更重視...",
+                question: "🤨評估跑步表現時，你更重視...",
                 text: ["數據和成績的提升", "帶來的快樂和滿足感"],
                 scale: ["F", "T"],
             },
             {
-                question: "哪件事情比較重要...",
+                question: "🤔選擇座右銘...",
                 text: ["保持心情愉快", "保持身體健康"],
                 scale: ["X", "Y"],
             }
@@ -136,13 +140,19 @@ const app = new Vue({
         }
     },
     methods: {
+        startQuiz() {
+            if (this.name.trim() !== '') {
+                this.showDisclaimer = false;
+            }
+        },
         nextQuestion() {
             const answerValue = parseInt(this.selectedAnswer);
             const { scale } = this.questions[this.currentQuestion];
 
             const score1 = 5 - answerValue;
             const score2 = answerValue - 1;
-
+            
+            this.selectedAnswers.push(this.selectedAnswer);
             this.mbtiScores[scale[0]] += score1;
             this.mbtiScores[scale[1]] += score2;
 
@@ -153,40 +163,90 @@ const app = new Vue({
                 this.$nextTick(() => { this.drawRadarChart(); });
             }
         },
-        shareResult() {
-            const shareUrl = `https://twitter.com/intent/tweet?text=我的MBTI人格是${this.mbtiType}！&url=${window.location.href}`;
-            window.open(shareUrl, "_blank");
+        submitResults() {
+            const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeNb-nuAK0JqFAt3W0fB_fPwzpxzgyXFxbqH_jGRzLxmUu83Q/formResponse"; // 替換為你的表單ID
+            const formData = new FormData();
+            formData.append("entry.563519898", this.name);
+            formData.append("entry.1120130145", JSON.stringify(this.selectedAnswers));
+            formData.append("entry.352889756", JSON.stringify(this.mbtiScores));
+            formData.append("entry.731620784", this.mbtiType);
+
+            fetch(formUrl, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+            }).then(() => {
+                console.log("表單提交成功");
+            }).catch((error) => {
+                console.error("表單提交失敗", error);
+            });
         },
         drawRadarChart() {
+            this.submitResults();
             const ctx = document.getElementById('radar-chart').getContext('2d');
             new Chart(ctx, {
-                type: 'radar',
+                type: 'polarArea',
                 data: {
                     labels: ['外向 (E)', '實感 (S)', '思考 (T)', '判斷 (J)', '內向 (I)', '直覺 (N)', '情感 (F)', '感知 (P)'],
                     datasets: [{
                         label: 'MBTI 分數',
                         data: [this.mbtiScores.E, this.mbtiScores.S, this.mbtiScores.T, this.mbtiScores.J, this.mbtiScores.I, this.mbtiScores.N, this.mbtiScores.F, this.mbtiScores.P],
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 2
+                        backgroundColor: [
+                            'rgba(255, 165, 0, 0.5)', // E
+                            'rgba(46, 139, 87, 0.5)', // S
+                            'rgba(255, 0, 0, 0.5)', // T
+                            'rgba(139, 69, 19, 0.5)', // J
+                            'rgba(65, 105, 225, 0.5)', // I
+                            'rgba(138, 43, 226, 0.5)', // N
+                            'rgba(255, 255, 0, 0.5)', // F
+                            'rgba(169, 169, 169, 0.5)' // P
+                        ],
+
+                          borderWidth: 1
                     }]
                 },
                 options: {
+                    responsive: true, // 確保圖表響應式
                     scales: {
                         r: {
+                            beginAtZero: true,
+                            pointLabels: {
+                                display: true,
+                                centerPointLabels: true,
+                            },
                             ticks: {
-                                display: false
-                            }                         
+                                 display: false 
+                            }                      
                         }
                     },
                     plugins: {
                         legend: {
-                            display: false 
+                            display: false                            
                         }
                     }
                 }
             });
-        }
+        },
+        shareResult(platform) {
+            const mbtiType = this.mbtiType;
+            const imageUrl = `images/${mbtiType}_${this.randomImageNum}.jpg`;
+            const shareData = {
+                title: '跑出你的 MBTI 人格！',
+                text: `我的 MBTI 人格是 ${mbtiType}！`,
+                url: window.location.href,
+                files: [new File([imageUrl], 'mbti_result.jpg', { type: 'image/jpeg' })] 
+            };
 
+            if (navigator.share) { // 檢查瀏覽器是否支援 Web Share API
+                navigator.share(shareData)
+                    .then(() => console.log('Successful share'))
+                    .catch(error => console.log('Error sharing:', error));
+            } else {
+                // 如果不支援 Web Share API，使用原先的分享邏輯 (Twitter, Instagram, Facebook)
+                let shareUrl;
+                // ... (原先的分享邏輯)
+                window.open(shareUrl, "_blank");
+            }
+        }
     }
 });
