@@ -5,14 +5,37 @@
     <title>跑出你的 MBTI 人格！</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M39W453');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M39W453"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="app" class="container">
+        <div id="disclaimer-modal" v-if="showDisclaimer">
+            <div class="modal-content">
+                <h2>👉 聲明 👈</h2>
+                <p>此問答/描述/圖片 87% 透過 AI 協助<br>
+                    🖖 純屬趣味，請勿過度認真 🙏<br>
+                <p>準備好就開始吧 🤜🤛</p>
+                <input type="text" v-model="name" placeholder="姓名">
+                <button @click="startQuiz">開始測驗</button>
+            </div>
+        </div>
         <section id="quiz-container" v-if="currentQuestion < questions.length">
             <div v-if="currentQuestion === 0">
                 <h1>跑出你的 MBTI 人格！</h1>
                 <p>探索你的跑步風格與 MBTI 人格的關聯。<br>
-                選擇你的偏好程度</p>
+                    快問快答，不要想太多</p>
+                    選擇你的偏好程度</p>
             </div>
             <div id="question-container">
                 <h2>{{ questions[currentQuestion].question }}</h2>
@@ -26,11 +49,6 @@
                         <span class="emoji-option">{{ option.text }}</span>
                     </label>
                 </div>
-                <div v-if="currentQuestion === 0">                    
-                    <p>此問答/描述/圖片都是透過 AI 協助<br>
-                    純屬趣味，請勿過度當真<br>
-                    重點還是要保持心情愉快，保持身體健康!!!</p>
-                </div>                
                 <div class="progress-bar">
                     <div class="progress" :style="{ width: progressPercentage + '%' }"></div>
                 </div>
@@ -38,13 +56,15 @@
             <button id="next-btn" @click="nextQuestion" :disabled="!selectedAnswer">下一題</button>
         </section>
 
-        <section id="results-container" v-else>
+        <section id="results-container" v-if="currentQuestion >= questions.length">
             <div class="result-card">
                 <img :src="`images/${mbtiType}_${randomImageNum}.jpg`" :alt="`${mbtiType} personality image`">
                 <h3>{{ mbtiType }} - {{ mbtiDescription.description }}</h3>
                 <p>{{ mbtiDescription.runningStyle }}</p>
                 <canvas id="radar-chart"></canvas>
+                <button @click="shareResult">分享結果</button> 
             </div>
+
         </section>
     </div>
 
