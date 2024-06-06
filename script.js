@@ -2,7 +2,7 @@ const app = new Vue({
     el: '#app',
     data: {
         imageUrl: null,
-        name: '',
+        userName: '',
         showDisclaimer: true,
         selectedAnswers: [],
         options: [
@@ -140,7 +140,7 @@ const app = new Vue({
     },
     methods: {
         startQuiz() {
-            if (this.name.trim() !== '') {
+            if (this.userName.trim() !== '') {
                 this.showDisclaimer = false;
             }
         },
@@ -165,7 +165,7 @@ const app = new Vue({
         submitResults() {
             const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeNb-nuAK0JqFAt3W0fB_fPwzpxzgyXFxbqH_jGRzLxmUu83Q/formResponse"; // 替換為你的表單ID
             const formData = new FormData();
-            formData.append("entry.563519898", this.name);
+            formData.append("entry.563519898", this.userName);
             formData.append("entry.1120130145", JSON.stringify(this.selectedAnswers));
             formData.append("entry.352889756", JSON.stringify(this.mbtiScores));
             formData.append("entry.731620784", this.mbtiType);
@@ -237,17 +237,15 @@ const app = new Vue({
                 url: window.location.href,
                 files: [new File([imageUrl], 'mbti_result.jpg', { type: 'image/jpeg' })] 
             };
-
+            const downloadLink = document.createElement('a');
+            downloadLink.href = imageUrl;
+            downloadLink.download = 'mbti_result.jpg';
+            downloadLink.click();
             if (navigator.share) { // 檢查瀏覽器是否支援 Web Share API
                 navigator.share(shareData)
                     .then(() => console.log('Successful share'))
                     .catch(error => console.log('Error sharing:', error));
-            } else {
-                const downloadLink = document.createElement('a');
-                downloadLink.href = imageUrl;
-                downloadLink.download = 'mbti_result.jpg';
-                downloadLink.click();
-            }
+            } 
             });
         }
 
