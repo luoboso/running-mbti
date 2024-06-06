@@ -27,7 +27,7 @@
                 <p>此問答/描述/圖片 87% 透過 AI 協助<br>
                     🖖 純屬趣味，請勿過度認真 🙏<br>
                 <p>準備好就開始吧 🤜🤛</p>
-                <input type="text" v-model="name" placeholder="姓名">
+                <input type="text" v-model="userName" placeholder="姓名">
                 <button @click="startQuiz">開始測驗</button>
             </div>
         </div>
@@ -58,14 +58,15 @@
         </section>
 
         <section id="results-container" v-if="currentQuestion >= questions.length">
-          <div id="share-result" class="result-card"> <div class="share-result">
+          <div id="share-result" class="result-card">
+            <div class="share-result">
               <img id="result" :src="`https://raw.githubusercontent.com/luoboso/running-mbti/main/images/${mbtiType}_${randomImageNum}.jpg`" :alt="`${mbtiType} personality image`">
               <h3>{{ mbtiType }} - {{ mbtiDescription.description }}</h3>
-              <p>{{ mbtiDescription.runningStyle }}</p>
+              <p>{{ userName }}{{ mbtiDescription.runningStyle }}</p>
               <canvas id="radar-chart"></canvas>
-            </div>
-            <button @click="shareResult">分享我的結果</button> 
+            </div>            
           </div>
+          <button @click="shareResult">保存我的結果</button> 
         </section>
     </div>
 
