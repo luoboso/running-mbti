@@ -107,7 +107,7 @@ const app = new Vue({
         currentQuestion: 0,
         selectedAnswer: null,
         mbtiScores: { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 },
-        randomImageNum: Math.floor(Math.random() * 6) + 1,
+        randomImageNum: Math.floor(Math.random() * 9) + 1,
     },
     computed: {
         mbtiType() {
