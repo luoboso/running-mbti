@@ -1,239 +1,274 @@
 /* 基本樣式 */
 body {
-    font-family: 'Noto Sans TC', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  margin: 0;
 }
 
 .container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 800px;
-    width: 100%;
-    min-width: 320px;
-    margin: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  min-width: 320px;
+  margin: auto;
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 20px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 p {
-    line-height: 1.6;
-    margin-bottom: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 #disclaimer-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  white-space: pre-line;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 320px;
-    width: 80%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 320px;
+  width: 80%;
 }
 
 .modal-content h2 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .modal-content p {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#language-select {
+  margin-bottom: 15px;
+}
+
+#language-select select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f5f7fa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#language-select select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  outline: none;
 }
 
 .modal-content input {
-    width: 80%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 .modal-content button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    transition: background-color 0.3s ease;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 .modal-content button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .modal-content button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(69, 160, 73, 0.5);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(69, 160, 73, 0.5);
 }
 
 #question-container {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .scale-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .scale-container label {
-    flex: 1;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-    min-width: 30px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid transparent;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  min-width: 30px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
 }
 
 .scale-container label:hover,
 .scale-container label:focus {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .scale-container label.selected {
-    background-color: #e0f7fa;
-    border-color: #4CAF50;
+  background-color: #e0f7fa;
+  border-color: #4CAF50;
 }
 
 .emoji-option {
-    font-size: 16px;
-    display: block;
+  font-size: 16px;
+  display: block;
 }
 
 .scale-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #777;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #777;
 }
 
 /* 進度條樣式 */
 .progress-bar {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 15px 0;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0;
 }
 
 .progress {
-    height: 10px;
-    background-color: #4CAF50;
-    transition: width 0.3s;
+  height: 10px;
+  background-color: #4CAF50;
+  transition: width 0.3s;
 }
 
 button {
     background-color: #4CAF50;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    transition: background-color 0.3s ease;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(69, 160, 73, 0.5);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(69, 160, 73, 0.5);
 }
 
 button:disabled {
-    background-color: #ccc;
-    cursor: default;
+  background-color: #ccc;
+  cursor: default;
 }
 
 .result-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    max-width: 600px;
-    margin: auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
 }
 
 .result-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .result-card h3 {
-    margin-bottom: 10px;
-    font-size: 24px;
+  margin-bottom: 10px;
+  font-size: 24px;
 }
 
 .result-card p {
-    line-height: 1.6;
-    margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .result-card canvas {
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+.share-friends-section {
+  text-align: center; /* Center text within the section */
+  margin-top: 20px; /* Add some space above the section */
+}
+
+.share-friends-section p {
+  font-size: 18px; /* Slightly larger font size for the share message */
+  margin-bottom: 10px; /* Space between the message and the button */
+}
+
+/* Larger Share Button */
+.share-friends-section button {
+  padding: 15px 30px; /* Increase padding for a larger button */
+  font-size: 18px; /* Larger font size for the button text */
 }
 
 /* 手機版樣式 */
 @media (max-width: 768px) {
-    body {
-        align-items: flex-start;
-    }
+  body {
+    align-items: flex-start;
+  }
 
-    #app {
-        padding: 15px;
-        margin: auto;
-    }
+  #app {
+    padding: 15px;
+    margin: auto;
+  }
 
-    .scale-container label {
-        margin: 5px 0;
-    }
+  .scale-container label {
+    margin: 5px 0;
+  }
 
-    .result-card {
-        padding: 20px;
-        max-width: 90%;
-        margin: auto;
-    }
+  .result-card {
+    padding: 20px;
+    max-width: 90%;
+    margin: auto;
+  }
 
-    .result-card canvas {
-        height: 250px;
-    }
+  .result-card canvas {
+    height: 250px;
+  }
 }
 a#ref {
   font-size: 8px;

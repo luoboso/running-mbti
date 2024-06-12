@@ -23,26 +23,29 @@
     <div id="app" class="container">
         <div id="disclaimer-modal" v-if="showDisclaimer">
             <div class="modal-content">
-                <h2>👉 聲明 👈</h2>
-                <p>此問答/描述/圖片 87% 透過 AI 協助<br>
-                    🖖 純屬趣味，請勿過度認真 🙏<br>
-                <p>準備好就開始吧 🤜🤛</p>
-                <input type="text" v-model="userName" placeholder="姓名">
-                <button @click="startQuiz">開始測驗</button>
+                <div id="language-select">
+                    <select v-model="currentLanguage" @change="loadLanguage">
+                        <option value="zh">中文</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <h2>👉 {{ language.disclaimerTitle }} 👈</h2>
+                <p>{{ language.disclaimer }}</p>                
+                <input type="text" v-model="userName" :placeholder="language.readyText">
+                <button @click="startQuiz">{{ language.startQuiz }}</button>
             </div>
         </div>
-        <section id="quiz-container" v-if="currentQuestion < questions.length">
+        <section id="quiz-container" v-if="currentQuestion < questions.length && language.questions">
             <div v-if="currentQuestion === 0">
-                <h1>跑出你的 MBTI 人格！</h1>
-                <p>探索你的跑步風格與 MBTI 人格的關聯。<br>
-                    快問快答，不要想太多</p>
-                    選擇你的偏好程度</p>
+                <h1>{{ language.title }}</h1>
+                <p>{{ language.introText }}</p>
+                <p>{{ language.selectPreference }}</p>
             </div>
-            <div id="question-container">
-                <h2>{{ questions[currentQuestion].question }}</h2>
+            <div id="question-container" v-if="language.questions && language.questions[currentQuestion]">
+                <h2>{{ language.questions[currentQuestion].question }}</h2>
                 <div class="scale-labels">
-                    <span>{{ questions[currentQuestion].text[0] }}</span>
-                    <span>{{ questions[currentQuestion].text[1] }}</span>
+                    <span>{{ language.questions[currentQuestion].text[0] }}</span>
+                    <span>{{ language.questions[currentQuestion].text[1] }}</span>
                 </div>
                 <div class="scale-container">
                     <label v-for="option in options" :key="option.value" :class="{ selected: selectedAnswer === option.value }">
@@ -54,7 +57,7 @@
                     <div class="progress" :style="{ width: progressPercentage + '%' }"></div>
                 </div>
             </div>
-            <button id="next-btn" @click="nextQuestion" :disabled="!selectedAnswer">下一題</button>
+            <button id="next-btn" @click="nextQuestion" :disabled="!selectedAnswer">{{ language.nextQuestion }}</button>
         </section>
 
         <section id="results-container" v-if="currentQuestion >= questions.length">
@@ -66,7 +69,10 @@
               <canvas id="radar-chart"></canvas>
             </div>            
           </div>
-          <button @click="shareResult">保存我的結果</button> 
+          <div class="share-friends-section"> 
+            <p>{{ language.shareFriends }}</p> 
+            <button @click="shareResult">{{ language.shareResult }}</button>
+        </div> 
         </section>
     </div>
 
@@ -74,10 +80,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
     <div class="bottomBar">
-        <a id="ref" href="https://portaly.cc/luoboso" target="_blank">蘿泥蔔說</a>&nbsp&nbsp|&nbsp&nbsp
-        <a id="ref" href="https://www.facebook.com/jybsbj4/" target="_blank">交友不慎</a>&nbsp&nbsp|&nbsp&nbsp
-        <a id="ref" href="https://luoboso.github.io/taiwan-running-scouter/" target="_blank">跑步溫度計</a>&nbsp&nbsp|&nbsp&nbsp
-        <a id="ref" href="https://luoboso.github.io/taiwan-running-level/" target="_blank">跑步戰鬥力</a>
+        <a id="ref" href="https://portaly.cc/luoboso" target="_blank">🥕蘿泥蔔說</a>&nbsp&nbsp|&nbsp&nbsp
+        <a id="ref" href="https://www.facebook.com/jybsbj4/" target="_blank">👥交友不慎</a>&nbsp&nbsp|&nbsp&nbsp
+        <a id="ref" href="https://luoboso.github.io/taiwan-running-scouter/" target="_blank">🌡️跑步溫度計</a>&nbsp&nbsp|&nbsp&nbsp
+        <a id="ref" href="https://luoboso.github.io/taiwan-running-level/" target="_blank">🧐跑步戰鬥力</a>
       </div>
 </body>
 </html>

@@ -1,0 +1,179 @@
+{
+  "title": "Run Your Way to Your MBTI!",
+  "disclaimerTitle": "Disclaimer",
+  "disclaimer": "AI-powered fun! \n🖖 Don't take it too seriously.🙏 \n\nReady? Let's run! 🤜🤛",
+  "readyText": "Name",
+  "startQuiz": "Game on",
+  "nextQuestion": "Next Run",
+  "shareFriends": "Share this with your running buddies, and while they're still pondering their answers, you can sneak in a 5K! 🤪\n#MBTIRunners #FriendlyCompetition ",
+  "shareResult": "Save My Result",
+  "questions": [
+    {
+      "question": "🤔 Which goal is more achievable for you...",
+      "text": ["Eating more", "Running more"],
+      "scale": ["X", "Y"]
+    },
+    {
+      "question": "📅 Your running plan is more like...",
+      "text": ["Go with the flow", "Calendar is king"],
+      "scale": ["P", "J"]
+    },
+    {
+      "question": "🏞️ Your ideal running route...",
+      "text": ["The most efficient path", "Adventure awaits!"],
+      "scale": ["T", "F"]
+    },
+    {
+      "question": "😳 When you see another runner, you...",
+      "text": ["Strike up a chat", "Crank up the tunes"],
+      "scale": ["E", "I"]
+    },
+    {
+      "question": "👟 Running gear priorities...",
+      "text": ["Tech specs galore", "Gotta look good"],
+      "scale": ["T", "F"]
+    },
+    {
+      "question": "⏱️ Workout time! You prefer...",
+      "text": ["Running buddies", "Solo grind"],
+      "scale": ["E", "I"]
+    },
+    {
+      "question": "😢 When running gets tough, you...",
+      "text": ["Analyze and conquer", "Trust your gut"],
+      "scale": ["S", "N"]
+    },
+    {
+      "question": "🎯 Setting running goals...",
+      "text": ["Follow your heart", "Keep it realistic"],
+      "scale": ["F", "T"]
+    },
+    {
+      "question": "🧘‍ Post-run stretching is like...",
+      "text": ["Interpretive dance", "Yoga master"],
+      "scale": ["N", "S"]
+    },
+    {
+      "question": "🛠️ When prepping for a race, you're more likely to...",
+      "text": ["Detailed training plan", "Flexible and spontaneous"],
+      "scale": ["J", "P"]
+    },
+    {
+      "question": "⏳ Night before the race, you're...",
+      "text": ["Chilling solo", "Party time!"],
+      "scale": ["I", "E"]
+    },
+    {
+      "question": "🚶‍ Pre-race focus...",
+      "text": ["Gear check!", "Visualizing victory"],
+      "scale": ["S", "N"]
+    },
+    {
+      "question": "🏃 During the race, you're all about...",
+      "text": ["Pace, pace, pace!", "Soak in the scenery"],
+      "scale": ["S", "N"]
+    },
+    {
+      "question": "🍌 Your race fueling strategy is...",
+      "text": ["Plan ahead", "Hungry? Eat!"],
+      "scale": ["J", "P"]
+    },
+    {
+      "question": "👣 After the race, you're more likely to...",
+      "text": ["Basking in glory", "Analyzing splits"],
+      "scale": ["P", "J"]
+    },
+    {
+      "question": "🧱 When you hit a running wall, you...",
+      "text": ["Call a friend", "Figure it out"],
+      "scale": ["E", "I"]
+    },
+    {
+      "question": "🤨When evaluating running performance, you value...",
+      "text": ["Numbers don't lie", "Happiness is key"],
+      "scale": ["F", "T"]
+    },
+    {
+      "question": "🤔Choosing a motto...",
+      "text": ["Happy mind", "Healthy body"],
+      "scale": ["X", "Y"]
+    }
+  ],
+  "label": "score",
+  "labels": [
+    "Extraversion (E)",
+    "Sensing (S)",
+    "Thinking (T)",
+    "Judging (J)",
+    "Introversion (I)",
+    "Intuition (N)",
+    "Feeling (F)",
+    "Perceiving (P)"
+  ],
+  "mbtiDescriptions": {
+    "ISTJ": {
+      "description": "The Determined Leader",
+      "runningStyle": " is disciplined and goal-oriented, like a cheetah focused on its prey, not giving up easily."
+    },
+    "ISFJ": {
+      "description": "The Warm Running Buddy",
+      "runningStyle": " is friendly and helpful, like a Labrador Retriever accompanying runners, providing support and encouragement."
+    },
+    "INFJ": {
+      "description": "The Deep Soul Runner",
+      "runningStyle": " is deep thinkers with rich inner worlds, like an owl contemplating in the night, gaining inspiration from running."
+    },
+    "INTJ": {
+      "description": "The Rational Data Master",
+      "runningStyle": " have strong analytical skills and strive for excellence, like an eagle overlooking from high above, creating the perfect running plan."
+    },
+    "ISTP": {
+      "description": "The Lone Wolf",
+      "runningStyle": " is independent and enjoy solitude, like a wolf running in the mountains, seeking freedom and challenges."
+    },
+    "ISFP": {
+      "description": "The Emotional Explorer",
+      "runningStyle": " enjoy the moment and love nature, like a butterfly fluttering among flowers, feeling the joy of running."
+    },
+    "INFP": {
+      "description": "The Dream Weaver",
+      "runningStyle": " is idealistic and imaginative, like a Antelope running in a dream, pursuing beauty."
+    },
+    "INTP": {
+      "description": "The Curious Knowledge Runner",
+      "runningStyle": " is intelligent and love learning, like a fox exploring a maze of knowledge, gaining new insights from running."
+    },
+    "ESTP": {
+      "description": "The Adventurous Thrill-Seeker",
+      "runningStyle": " is bold and love excitement, like a lion running on the savanna, pushing their limits."
+    },
+    "ESFP": {
+      "description": "The Enthusiastic Socializer",
+      "runningStyle": " is lively and sociable, like a dolphin playing in the sea, enjoying interacting with fellow runners."
+    },
+    "ENFP": {
+      "description": "The Free-Spirited Creator",
+      "runningStyle": " is energetic and creative, like a hummingbird flitting between flowers, enjoying the inspiration that running brings."
+    },
+    "ENTP": {
+      "description": "The Resourceful Inventor",
+      "runningStyle": " is intelligent and curious, loving innovation, like a monkey playing in the jungle, exploring new ways to run."
+    },
+    "ESTJ": {
+      "description": "The Pragmatic Disciplinarian",
+      "runningStyle": " is responsible and efficient, like a horse galloping on the track, striving for excellent performance."
+    },
+    "ESFJ": {
+      "description": "The Supportive Cheerleader",
+      "runningStyle": " is helpful and encouraging, like a Penguin cheering on runners, spreading positive energy."
+    },
+    "ENFJ": {
+      "description": "The Inspiring Coach",
+      "runningStyle": " is strong leaders and motivators, like an elephant leading runners forward, achieving goals together."
+    },
+    "ENTJ": {
+      "description": "The Decisive Strategist",
+      "runningStyle": " is decisive and goal-oriented, like a shark patrolling the ocean, in control of the situation."
+    }
+  }
+}
