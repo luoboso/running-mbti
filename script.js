@@ -1,6 +1,11 @@
 const app = new Vue({
     el: '#app',
     data: {
+        languages: [
+            { value: 'zh', text: '中文' },
+            { value: 'en', text: 'English' },
+            { value: 'em', text: '🛸🛸🛸' },
+        ],
         currentLanguage: 'zh',
         language: {},
         imageUrl: null,
@@ -48,16 +53,14 @@ const app = new Vue({
         nextQuestion() {
             const answerValue = parseInt(this.selectedAnswer);
             const { scale } = this.questions[this.currentQuestion];
-
             const score1 = 5 - answerValue;
             const score2 = answerValue - 1;
             
             this.selectedAnswers.push(this.selectedAnswer);
             this.mbtiScores[scale[0]] += score1;
             this.mbtiScores[scale[1]] += score2;
-
             this.currentQuestion++;
-            this.selectedAnswer = null; // 重置選項
+            this.selectedAnswer = null;
 
             if (this.currentQuestion >= this.questions.length) {
                 this.$nextTick(() => { this.drawRadarChart(); });
@@ -90,7 +93,8 @@ const app = new Vue({
                     labels: this.language.labels,
                     datasets: [{
                         label: this.language.label,
-                        data: [this.mbtiScores.E, this.mbtiScores.S, this.mbtiScores.T, this.mbtiScores.J, this.mbtiScores.I, this.mbtiScores.N, this.mbtiScores.F, this.mbtiScores.P],
+                        data: [this.mbtiScores.E, this.mbtiScores.S, this.mbtiScores.T, this.mbtiScores.J, 
+                               this.mbtiScores.I, this.mbtiScores.N, this.mbtiScores.F, this.mbtiScores.P],
                         backgroundColor: [
                             'rgba(255, 165, 0, 0.5)', // E
                             'rgba(46, 139, 87, 0.5)', // S
@@ -101,12 +105,11 @@ const app = new Vue({
                             'rgba(255, 255, 0, 0.5)', // F
                             'rgba(169, 169, 169, 0.5)' // P
                         ],
-
                           borderWidth: 1
                     }]
                 },
                 options: {
-                    responsive: true, // 確保圖表響應式
+                    responsive: true,
                     scales: {
                         r: {
                             beginAtZero: true,
@@ -138,7 +141,6 @@ const app = new Vue({
             downloadLink.click();
             });
         }
-
     },
     mounted() {
         this.loadLanguage();

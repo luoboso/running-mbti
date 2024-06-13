@@ -1,0 +1,180 @@
+{
+    "title": "🏃‍♂️🏃‍♀️💨🧠",
+    "disclaimerTitle": "⚠️⚠️⚠️",
+    "disclaimer": "🤖🔋👨‍💻🦾⚙️\n🖖😜🤪🚫🤓🙏 \n\n🆗 🏃‍♂️🏃‍♀️ 🤜🤛",
+    "readyText": "👤",
+    "startQuiz": "▶️",
+    "nextQuestion": "⏭️",
+    "shareFriends": "📢🏃‍♀️🏃‍♂️💨🤔❓5️⃣🅺 🤪",
+    "shareResult": "💾📊",
+    "questions": [
+      {
+        "question": "🤔 ➡️🎯🤷‍♂️...",
+        "text": ["🍤2️⃣0️⃣0️⃣", "🏃‍♂️2️⃣0️⃣0️⃣"],
+        "scale": ["X", "Y"]
+      },
+      {
+        "question": "📅 🏃‍♂️📓💪...",
+        "text": ["🆓🧘‍♂️", "⏲️👨‍💻"],
+        "scale": ["P", "J"]
+      },
+      {
+        "question": "🏞️ 🏃‍♂️💞🗺️...",
+        "text": ["🧭", "❓"],
+        "scale": ["T", "F"]
+      },
+      {
+        "question": "😳 🏃‍♂️🙈🏃‍♂️...",
+        "text": ["👋", "🙈"],
+        "scale": ["E", "I"]
+      },
+      {
+        "question": "👟 🎽🩳⌚...",
+        "text": ["📈", "✨"],
+        "scale": ["T", "F"]
+      },
+      {
+        "question": "⏱️ 🏋️💪💦...",
+        "text": ["🧑‍🤝‍🧑🧑‍🤝‍🧑", "🧍"],
+        "scale": ["E", "I"]
+      },
+      {
+        "question": "😢 🏃‍♂️😩⬇️...",
+        "text": ["🧠🔍", "✨🔮"],
+        "scale": ["S", "N"]
+      },
+      {
+        "question": "🎯 📝🆚🔀...",
+        "text": ["🎯❤️", "🎯✅"],
+        "scale": ["F", "T"]
+      },
+      {
+        "question": "🧘‍ 🙋‍♂️🤷‍♂️💁‍♂️...",
+        "text": ["💃🕺", "🧘🧘"],
+        "scale": ["N", "S"]
+      },
+      {
+        "question": "🛠️ 🏁🏃‍♀️🏃‍♂️",
+        "text": ["📝📆", "🏃‍♀️💨"],
+        "scale": ["J", "P"]
+      },
+      {
+        "question": "⏳ 🌙🏁😴...",
+        "text": ["🧘‍♂️", "👨‍👩‍👧‍👦"],
+        "scale": ["I", "E"]
+      },
+      {
+        "question": "🚶‍ 🧠💭🏃‍♀️...",
+        "text": ["🎒✅", "🏟️🎉"],
+        "scale": ["S", "N"]
+      },
+      {
+        "question": "🏃 🐢🐇💨...",
+        "text": ["⏱️", "🏞️"],
+        "scale": ["S", "N"]
+      },
+      {
+        "question": "🍌 🏃‍♂️🥤💧...",
+        "text": ["📅", "🤤"],
+        "scale": ["J", "P"]
+      },
+      {
+        "question": "👣 🏃‍♂️🏃‍♀️🏁...",
+        "text": ["🎉", "📊"],
+        "scale": ["P", "J"]
+      },
+      {
+        "question": "🧱 🏃‍♂️🏃‍♀️💥...",
+        "text": ["🗣️💬", "💪🧠"],
+        "scale": ["E", "I"]
+      },
+      {
+        "question": "🤨 🏁📈📉...",
+        "text": ["🥇🏆", "😄❤️"],
+        "scale": ["F", "T"]
+      },
+      {
+        "question": "🤔 📜🏃‍♂️✍️...",
+        "text": ["🌈😄", "💪🏃‍♀️"],
+        "scale": ["X", "Y"]
+      }
+    ],
+    "label": "score",
+    "labels": [
+      "📢 (E)",
+      "👀 (S)",
+      "🧠 (T)",
+      "⚖️ (J)",
+      "🛋️ (I)",
+      "💭 (N)",
+      "❤️ (F)",
+      "🤸‍♂️ (P)"
+    ],
+    "mbtiDescriptions": {
+      "ISTJ": {
+        "description": "📚🔍🎯🗂️",
+        "runningStyle": " 🐆🦸‍♂️🏃‍♂️⌚📏💪🏆📊📅🐆"
+      },
+      "ISFJ": {
+        "description": "❤️👩‍👧‍👦📋🏡",
+        "runningStyle": " 🐕💧🙌😊🏃‍♂️👭🏞️🎉🏃‍♂️🐕"
+      },
+      "INFJ": {
+        "description": "🌈🌱🧠💫",
+        "runningStyle": " 🦉🌃💭🏃‍♂️🌠🌿🧩🧘‍♂️🌌🦉"
+      },
+      "INTJ": {
+        "description": "🧠🔬📊🎯",
+        "runningStyle": " 🦅📈📊🏃‍♂️🏔️🎯🦾📟🏃‍♂️🦅"
+      },
+      "ISTP": {
+        "description": "🔧🧩🏍️🕵️",
+        "runningStyle": " 🐺🏞️🏃‍♂️🌪️🏃‍♂️📏🏃‍♂️🧩🌄🐺"
+      },
+      "ISFP": {
+        "description": "🎨🌷🦋🍃",
+        "runningStyle": " 🦋🌳🏃‍♂️✨🏃‍♂️🏞️🌞🏃‍♂️🌼🦋"
+      },
+      "INFP": {
+        "description": "🌸📖🧚‍♂️🌟",
+        "runningStyle": " 🦌🏞️🏃‍♂️🎵🎶🌬️🏃‍♂️🌈💭🦌"
+      },
+      "INTP": {
+        "description": "🤔🔍💡🔬",
+        "runningStyle": " 🦊💭🏃‍♂️🔍🏃‍♂️🏞️🌿🏃‍♂️🧠🦊"
+      },
+      "ESTP": {
+        "description": "🚀🏃‍♂️💪🎉",
+        "runningStyle": " 🦁💥🏃‍♂️🏞️🏆💪🏃‍♂️🌟⚡🦁"
+      },
+      "ESFP": {
+        "description": "🎤🌟🎉🍸",
+        "runningStyle": " 🐬🏃‍♂️🗣️🏞️🏃‍♂️👯‍♂️🎉🏃‍♂️😃🐬"
+      },
+      "ENFP": {
+        "description": "🌈💡🎨🌟",
+        "runningStyle": " 🐦🏃‍♂️⚡✨🏃‍♂️🌈🕊️🏃‍♂️💡🐦"
+      },
+      "ENTP": {
+        "description": "💬🧠⚙️🌪️",
+        "runningStyle": " 🐒🏃‍♂️🎉📱🤸‍♂️📊🧠🏃‍♂️🤹‍♂️🐒"
+      },
+      "ESTJ": {
+        "description": "📊📅💼🏆",
+        "runningStyle": " 🐎🏃‍♂️📅🏃☔️📆💪🏆🏃‍♂️🐎"
+      },
+      "ESFJ": {
+        "description": "🎉❤️👫🍽️",
+        "runningStyle": " 🐧🏃‍♂️👏🏃‍♂️💧😊❤️🏃‍♂️👫🐧"
+      },
+      "ENFJ": {
+        "description": "🌟💬🌱❤️",
+        "runningStyle": " 🐘🏃‍♂️👏👫🏃‍♂️❤️🌟🏃‍♂️💪🐘"
+      },
+      "ENTJ": {
+        "description": "📈🏆💼🚀",
+        "runningStyle": " 🦈🏃‍♂️🎯🏃‍♂️📊🏃‍♂️🏆🏃‍♂️🔥🦈"
+      }
+    }
+  }
+  

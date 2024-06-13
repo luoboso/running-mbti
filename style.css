@@ -1,4 +1,3 @@
-/* 基本樣式 */
 body {
   font-family: "Noto Sans TC", sans-serif;
   display: flex;
@@ -60,25 +59,6 @@ p {
 
 .modal-content p {
   margin-bottom: 20px;
-}
-
-#language-select {
-  margin-bottom: 15px;
-}
-
-#language-select select {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #f5f7fa;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-#language-select select:focus {
-  border-color: #4caf50;
-  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
-  outline: none;
 }
 
 .modal-content input {
@@ -155,7 +135,6 @@ p {
   color: #777;
 }
 
-/* 進度條樣式 */
 .progress-bar {
   width: 100%;
   background-color: #e0e0e0;
@@ -230,19 +209,18 @@ button:disabled {
   margin-bottom: 20px;
 }
 .share-friends-section {
-  text-align: center; /* Center text within the section */
-  margin-top: 20px; /* Add some space above the section */
+  text-align: center; 
+  margin-top: 20px; 
 }
 
 .share-friends-section p {
-  font-size: 18px; /* Slightly larger font size for the share message */
-  margin-bottom: 10px; /* Space between the message and the button */
+  font-size: 18px; 
+  margin-bottom: 10px;
 }
 
-/* Larger Share Button */
 .share-friends-section button {
-  padding: 15px 30px; /* Increase padding for a larger button */
-  font-size: 18px; /* Larger font size for the button text */
+  padding: 15px 30px;
+  font-size: 18px;
 }
 
 /* 手機版樣式 */
@@ -285,4 +263,27 @@ a#ref {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#language-select { 
+  display: flex;
+  justify-content: space-around; 
+  margin-bottom: 20px;
+}
+
+.language-option {
+  flex: 1; 
+  text-align: center; 
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  min-width: 2px;
+  padding: 4px;
+  border-radius: 8px; 
+  border: 2px solid transparent; 
+}
+
+.language-option:hover,
+.language-option input[type="radio"]:checked + span {
+  background-color: #e0f7fa; 
+  border-color: #4CAF50; 
 }
