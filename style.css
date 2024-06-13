@@ -150,7 +150,7 @@ p {
 }
 
 button {
-    background-color: #4CAF50;
+  background-color: #4CAF50;
   color: white;
   padding: 12px 24px;
   border: none;
@@ -223,7 +223,6 @@ button:disabled {
   font-size: 18px;
 }
 
-/* 手機版樣式 */
 @media (max-width: 768px) {
   body {
     align-items: flex-start;
@@ -268,7 +267,7 @@ a#ref {
 #language-select { 
   display: flex;
   justify-content: space-around; 
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .language-option {
@@ -283,7 +282,7 @@ a#ref {
 }
 
 .language-option:hover,
-.language-option input[type="radio"]:checked + span {
+.language-option.selected {
   background-color: #e0f7fa; 
   border-color: #4CAF50; 
 }
